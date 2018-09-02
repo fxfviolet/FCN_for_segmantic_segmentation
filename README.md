@@ -48,10 +48,10 @@
 
 ## 2 &nbsp;结果
 #### 模型训练完成后，拿一张汽车的图片进行校验，得到的结果如下。
-汽车的原始图片：![原图](./image.jpg)
-汽车的类别标签：![标签](./annotation.jpg) 
-预测得到的汽车分割图片：![预测](./prediction.jpg)
-CRF(条件随机场)之后预测得到的汽车分割图片：![预测](./prediction_crfed.jpg)
+汽车的原始图片：![原图](./image/image.jpg)
+汽车的类别标签：![标签](./image/annotation.jpg) 
+预测得到的汽车分割图片：![预测](./image/prediction.jpg)
+CRF(条件随机场)之后预测得到的汽车分割图片：![预测](./image/prediction_crfed.jpg)
 
 
  
