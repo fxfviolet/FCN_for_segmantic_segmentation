@@ -1,9 +1,9 @@
 # FCN图像分割
 
-### 构建了一个FCN全连接网络模型用于图像分割。数据集是Pascal2 VOC2012，分类网络是vgg_16，对卷积池化后得到的特征图进行8x上采样，最后用交叉熵计算loss损失进行优化。完成图像的分割。
+#### 构建了一个FCN全连接网络模型用于图像分割。数据集是Pascal2 VOC2012，分类网络是vgg_16，对卷积池化后得到的特征图进行8x上采样，最后用交叉熵计算loss损失进行优化，完成图像的分割。
 
 ## 1 &nbsp;算法
-#### 参考论文《Fully Convolutional Networks for Semantic Segmentation》（https://arxiv.org/abs/1411.4038），编写上采样代码。上采样的过程及代码如下：
+#### 参考论文《Fully Convolutional Networks for Semantic Segmentation》(https://arxiv.org/abs/1411.4038) ，编写上采样代码。上采样的过程及代码如下：
 ##### 1) 首先调用vgg_16,卷积池化得到的logits和end_points用于后面的上采样。
     with slim.arg_scope(vgg.vgg_arg_scope()):
         logits, end_points = vgg.vgg_16(image_tensor,
@@ -48,10 +48,14 @@
 
 ## 2 &nbsp;结果
 #### 模型训练完成后，拿一张汽车的图片进行校验，得到的结果如下。
-汽车的原始图片：![原图](./image/image.jpg)
-汽车的类别标签：![标签](./image/annotation.jpg) 
-预测得到的汽车分割图片：![预测](./image/prediction.jpg)
-CRF(条件随机场)之后预测得到的汽车分割图片：![预测](./image/prediction_crfed.jpg)
+汽车的原始图片：
+![原图](./image/image.jpg)        
+汽车的类别标签：
+![标签](./image/annotation.jpg)       
+预测得到的汽车分割图片：
+![预测](./image/prediction.jpg)     
+CRF(条件随机场)之后预测得到的汽车分割图片：
+![预测](./image/prediction_crfed.jpg)      
 
 
  
