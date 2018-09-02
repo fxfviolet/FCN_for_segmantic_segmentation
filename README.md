@@ -12,7 +12,7 @@
                                         spatial_squeeze=False,
                                         fc_conv_padding='SAME')
 ##### 2) 对vgg_16预训练模型中pool5的输出特征进行2x上采样。
-    upsample_filter_np_x2 = bilinear_upsample_weights(2, number_of_classes)        # 双线性插值
+    upsample_filter_np_x2 = bilinear_upsample_weights(2, number_of_classes)        
     upsample_filter_tensor_x2 = tf.Variable(upsample_filter_np_x2, name='vgg_16/fc8/t_conv_x4')
     upsampled_logits_pool5 = tf.nn.conv2d_transpose(logits, upsample_filter_tensor_x2,
                                             output_shape=tf.shape(aux_logits_16s),
@@ -48,14 +48,11 @@
 
 ## 2 &nbsp;结果
 #### 模型训练完成后，拿一张汽车的图片进行校验，得到的结果如下。
-汽车的原始图片：
-![原图](./image/image.jpg)        
-汽车的类别标签：
-![标签](./image/annotation.jpg)       
-预测得到的汽车分割图片：
-![预测](./image/prediction.jpg)     
-CRF(条件随机场)之后预测得到的汽车分割图片：
-![预测](./image/prediction_crfed.jpg)      
-
-
- 
+汽车的原始图片：      
+![原图](./image/image.jpg)           
+汽车的类别标签：      
+![标签](./image/annotation.jpg)           
+预测得到的汽车分割图片：    
+![预测](./image/prediction.jpg)           
+CRF(条件随机场)之后预测得到的汽车分割图片：     
+![预测](./image/prediction_crfed.jpg)          
