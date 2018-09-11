@@ -1,6 +1,6 @@
 # FCN图像分割
 
-#### 构建了一个FCN全连接网络模型用于图像分割。数据集是Pascal2 VOC2012，分类网络是vgg_16，对卷积池化后得到的特征图进行8x上采样，最后用交叉熵计算loss损失进行优化，完成图像的分割。
+#### 构建了一个FCN全卷积网络模型用于分割图片中的车辆。数据集是Pascal2 VOC2012，分类网络是vgg_16，对卷积池化后得到的特征图进行8x上采样，最后用交叉熵计算loss损失进行优化，完成图像的分割。
 
 ## 1 &nbsp;算法
 #### 参考论文《Fully Convolutional Networks for Semantic Segmentation》(https://arxiv.org/abs/1411.4038) ，编写上采样代码。上采样的过程及代码如下：
